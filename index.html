@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENNACIRI Abderrahim – Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark:    '#0a0f1e',
+            darker:  '#060b16',
+            card:    '#0f1729',
+            border:  '#1e2d4a',
+            accent:  '#00d4ff',
+            accent2: '#7c3aed',
+            accent3: '#10b981',
+            muted:   '#8892a4',
+          },
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-darker text-white font-mono antialiased">
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────────────────────── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-darker/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="text-accent font-bold text-lg tracking-widest">&lt;ENNACIRI /&gt;</span>
+      <div class="hidden md:flex gap-8 text-sm text-muted">
+        <a href="#hero"        class="hover:text-accent transition-colors">Accueil</a>
+        <a href="#skills"      class="hover:text-accent transition-colors">Compétences</a>
+        <a href="#projects"    class="hover:text-accent transition-colors">Projets</a>
+        <a href="#contact"     class="hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
+  <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+
+    <!-- grid background -->
+    <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+
+    <!-- glow blobs -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent2/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+
+      <!-- badge -->
+      <div class="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 text-xs text-muted mb-8">
+        <span class="w-2 h-2 bg-accent3 rounded-full animate-pulse"></span>
+        Disponible pour des opportunités
+      </div>
+
+      <!-- avatar -->
+      <div class="flex justify-center mb-6">
+        <div class="border-2 border-accent/40 shadow-xl shadow-accent/20 rounded-2xl overflow-hidden">
+          <img src="assets/images/1763769157870.jpg" alt="ENNACIRI Abderrahim" class="block max-h-72 w-auto" />
+        </div>
+      </div>
+
+      <!-- name -->
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+        <span class="text-white">ENNACIRI</span><br />
+        <span class="gradient-text">ABDERRAHIM</span>
+      </h1>
+
+      <!-- title -->
+      <p class="text-muted text-lg md:text-xl mb-3 max-w-2xl mx-auto leading-relaxed">
+        Étudiant en <span class="text-accent font-semibold">Ingénierie des Systèmes Embarqués</span><br class="hidden md:block" />
+        et <span class="text-accent2 font-semibold">Services Numériques</span> à l'<span class="text-white font-semibold">INPT</span>
+      </p>
+
+      <!-- tagline -->
+      <p class="text-muted/60 text-sm mb-10">
+        Du silicium au cloud — je construis des systèmes qui parlent au monde.
+      </p>
+
+      <!-- CTA buttons -->
+      <div id="contact" class="flex flex-wrap justify-center gap-4">
+        <a href="assets/CV_ENNACIRI.pdf" download
+           class="cta-btn bg-accent text-darker font-bold px-6 py-3 rounded-lg flex items-center gap-2 hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5">
+          <i class="fa-solid fa-download"></i> Télécharger CV
+        </a>
+        <a href="https://github.com/ennaciri197" target="_blank" rel="noopener"
+           class="cta-btn bg-card border border-border text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-0.5">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/abderrahim-ennaciri" target="_blank" rel="noopener"
+           class="cta-btn bg-card border border-border text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 hover:border-accent2/50 hover:shadow-lg hover:shadow-accent2/10 transition-all duration-300 hover:-translate-y-0.5">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <!-- scroll hint -->
+      <div class="mt-16 flex flex-col items-center gap-2 text-muted/40 text-xs animate-bounce">
+        <span>Défiler</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMPÉTENCES ────────────────────────────────────────────────────── -->
+  <section id="skills" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- section header -->
+      <div class="mb-14 text-center">
+        <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-2">// 01 — expertise</p>
+        <h2 class="text-4xl md:text-5xl font-bold">Compétences</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-accent to-accent2 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- 2-column grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- ── Colonne Gauche : Électronique & Systèmes Embarqués ── -->
+        <div class="skill-card bg-card border border-border rounded-2xl p-8 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5">
+
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-xl">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-lg">Électronique &amp; Systèmes Embarqués</h3>
+              <p class="text-muted text-xs">Hardware · Firmware · Signal</p>
+            </div>
+          </div>
+
+          <!-- Matériel / Microcontrôleurs -->
+          <div class="mb-6">
+            <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-cpu"></i> Matériel / Microcontrôleurs
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag border-accent/30 text-accent">ESP32</span>
+              <span class="skill-tag border-accent/30 text-accent">ESP32-CAM</span>
+              <span class="skill-tag border-accent/30 text-accent">PIC18</span>
+              <span class="skill-tag border-accent/30 text-accent">STM32</span>
+              <span class="skill-tag border-accent/30 text-accent">Cartes FPGA</span>
+            </div>
+          </div>
+
+          <!-- CAO & Logiciels -->
+          <div class="mb-6">
+            <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-drafting-compass"></i> CAO &amp; Logiciels
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag border-accent/30 text-accent">Proteus</span>
+              <span class="skill-tag border-accent/30 text-accent">MATLAB</span>
+            </div>
+          </div>
+
+          <!-- Langages bas niveau -->
+          <div>
+            <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-code"></i> Langages bas niveau
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag border-accent/30 text-accent">C</span>
+              <span class="skill-tag border-accent/30 text-accent">C++</span>
+              <span class="skill-tag border-accent/30 text-accent">VHDL</span>
+              <span class="skill-tag border-accent/30 text-accent">Assembleur</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Colonne Droite : DevOps, Cloud & Informatique ── -->
+        <div class="skill-card bg-card border border-border rounded-2xl p-8 hover:border-accent2/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent2/5">
+
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 bg-accent2/10 rounded-lg flex items-center justify-center text-accent2 text-xl">
+              <i class="fa-brands fa-docker"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-lg">DevOps, Cloud &amp; Informatique</h3>
+              <p class="text-muted text-xs">Infrastructure · Scripting · Data</p>
+            </div>
+          </div>
+
+          <!-- Outils DevOps -->
+          <div class="mb-6">
+            <p class="text-accent2 text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-gears"></i> Outils DevOps
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag border-accent2/30 text-accent2">Docker</span>
+              <span class="skill-tag border-accent2/30 text-accent2">Docker Compose</span>
+            </div>
+          </div>
+
+          <!-- Systèmes & Scripting -->
+          <div class="mb-6">
+            <p class="text-accent2 text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+              <i class="fa-brands fa-linux"></i> Systèmes &amp; Scripting
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag border-accent2/30 text-accent2">Linux/Unix</span>
+              <span class="skill-tag border-accent2/30 text-accent2">Administration Système</span>
+              <span class="skill-tag border-accent2/30 text-accent2">Scripting Bash</span>
+              <span class="skill-tag border-accent2/30 text-accent2">Git</span>
+              <span class="skill-tag border-accent2/30 text-accent2">GitHub</span>
+            </div>
+          </div>
+
+          <!-- Bases de données & Dev -->
+          <div>
+            <p class="text-accent2 text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-database"></i> Bases de données &amp; Dev
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag border-accent2/30 text-accent2">
+                SQL <span class="text-xs opacity-60">(Certifié DataCamp)</span>
+              </span>
+              <span class="skill-tag border-accent2/30 text-accent2">Java</span>
+              <span class="skill-tag border-accent2/30 text-accent2">Python</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+  <!-- ─── PROJETS ────────────────────────────────────────────────────────── -->
+  <section id="projects" class="py-24 px-6 bg-dark/50">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- section header -->
+      <div class="mb-14 text-center">
+        <p class="text-accent3 text-sm font-semibold tracking-widest uppercase mb-2">// 02 — réalisations</p>
+        <h2 class="text-4xl md:text-5xl font-bold">Projets</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-accent3 to-accent mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- ══ Catégorie 1 : Systèmes Embarqués & Électronique ══ -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
+            <i class="fa-solid fa-microchip text-sm"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Systèmes Embarqués &amp; Électronique</h3>
+          <div class="flex-1 h-px bg-border ml-2"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- Projet 1 : Barrière Faciale -->
+          <div class="project-card group bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 cursor-default">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-xs bg-accent/10 text-accent border border-accent/20 px-2 py-1 rounded-full">Embarqué</span>
+                <span class="text-xs bg-accent3/10 text-accent3 border border-accent3/20 px-2 py-1 rounded-full">Vision</span>
+              </div>
+            </div>
+
+            <h4 class="text-white font-bold text-lg mb-2 group-hover:text-accent transition-colors duration-300">
+              Barrière Automatisée par Reconnaissance Faciale
+            </h4>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Système de contrôle d'accès autonome basé sur la reconnaissance faciale en temps réel.
+              Capture vidéo, traitement embarqué et actionnement mécanique avec journalisation persistante.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">ESP32-CAM</span>
+              <span class="tech-tag">C</span>
+              <span class="tech-tag">Servomoteur</span>
+              <span class="tech-tag">Journalisation SD</span>
+            </div>
+          </div>
+
+          <!-- Projet 2 : Radar MATLAB -->
+          <div class="project-card group bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 cursor-default">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-satellite-dish"></i>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-xs bg-accent/10 text-accent border border-accent/20 px-2 py-1 rounded-full">Signal</span>
+                <span class="text-xs bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 px-2 py-1 rounded-full">MATLAB</span>
+              </div>
+            </div>
+
+            <h4 class="text-white font-bold text-lg mb-2 group-hover:text-accent transition-colors duration-300">
+              Modélisation et Traitement de Signal d'un Système Radar
+            </h4>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Modélisation complète d'un système radar sous MATLAB : génération de signaux, simulation de propagation,
+              traitement DSP et visualisation des résultats de détection.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">DSP</span>
+              <span class="tech-tag">Modélisation</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══ Catégorie 2 : Projets Hybrides ══ -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-8 h-8 bg-accent3/10 rounded-lg flex items-center justify-center text-accent3">
+            <i class="fa-solid fa-layer-group text-sm"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Projets Hybrides — IoT, DevOps &amp; Systèmes Connectés</h3>
+          <div class="flex-1 h-px bg-border ml-2"></div>
+        </div>
+
+        <!-- Projet Majeur : Temperature Dashboard -->
+        <div class="project-card group relative bg-card border border-accent3/30 rounded-2xl p-8 hover:border-accent3/60 transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent3/15 cursor-default overflow-hidden">
+
+          <!-- "Projet Majeur" ribbon -->
+          <div class="absolute top-5 right-5 flex items-center gap-2 bg-accent3/10 border border-accent3/30 rounded-full px-3 py-1">
+            <i class="fa-solid fa-star text-accent3 text-xs"></i>
+            <span class="text-accent3 text-xs font-semibold">Projet Majeur</span>
+          </div>
+
+          <!-- glow -->
+          <div class="absolute inset-0 bg-gradient-to-br from-accent3/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
+
+          <div class="relative z-10">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="w-14 h-14 bg-accent3/10 rounded-xl flex items-center justify-center text-accent3 text-3xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                <i class="fa-solid fa-temperature-half"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-2xl mb-1 group-hover:text-accent3 transition-colors duration-300">
+                  Temperature Dashboard
+                </h4>
+                <p class="text-accent3 text-sm font-semibold">Supervision IoT en Temps Réel</p>
+              </div>
+            </div>
+
+            <p class="text-muted text-sm leading-relaxed mb-8 max-w-3xl">
+              Projet full-stack qui fait le pont entre <span class="text-white font-semibold">le matériel, le DevOps, la base de données et le web</span>.
+              Un capteur DHT11 connecté à un Raspberry Pi 3B collecte température et humidité via GPIO,
+              les données transitent dans une stack Docker Compose (MariaDB ARMv7 + PHP),
+              et un dashboard web affiche les courbes en temps réel grâce à Chart.js et des requêtes AJAX toutes les 5 secondes.
+            </p>
+
+            <!-- Architecture bridge -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+
+              <div class="arch-block border-accent/30 bg-accent/5">
+                <i class="fa-solid fa-microchip text-accent text-xl mb-2"></i>
+                <p class="text-accent text-xs font-bold uppercase tracking-wider mb-1">Hardware</p>
+                <p class="text-muted text-xs">DHT11</p>
+                <p class="text-muted text-xs">Raspberry Pi 3B</p>
+                <p class="text-muted text-xs">GPIO</p>
+              </div>
+
+              <div class="arch-block border-accent2/30 bg-accent2/5">
+                <i class="fa-brands fa-docker text-accent2 text-xl mb-2"></i>
+                <p class="text-accent2 text-xs font-bold uppercase tracking-wider mb-1">DevOps</p>
+                <p class="text-muted text-xs">Docker</p>
+                <p class="text-muted text-xs">Docker Compose</p>
+              </div>
+
+              <div class="arch-block border-yellow-500/30 bg-yellow-500/5">
+                <i class="fa-solid fa-database text-yellow-400 text-xl mb-2"></i>
+                <p class="text-yellow-400 text-xs font-bold uppercase tracking-wider mb-1">Base de données</p>
+                <p class="text-muted text-xs">MariaDB</p>
+                <p class="text-muted text-xs">ARMv7</p>
+              </div>
+
+              <div class="arch-block border-accent3/30 bg-accent3/5">
+                <i class="fa-solid fa-chart-line text-accent3 text-xl mb-2"></i>
+                <p class="text-accent3 text-xs font-bold uppercase tracking-wider mb-1">Web</p>
+                <p class="text-muted text-xs">PHP</p>
+                <p class="text-muted text-xs">Chart.js</p>
+                <p class="text-muted text-xs">AJAX / 5s</p>
+              </div>
+
+            </div>
+
+            <!-- Tech tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">DHT11</span>
+              <span class="tech-tag">Raspberry Pi 3B</span>
+              <span class="tech-tag">GPIO</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Docker Compose</span>
+              <span class="tech-tag">MariaDB ARMv7</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">Chart.js</span>
+              <span class="tech-tag">AJAX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="py-10 px-6 border-t border-border text-center">
+    <p class="text-muted text-sm">
+      Conçu &amp; développé par <span class="text-accent font-semibold">ENNACIRI Abderrahim</span> · INPT
+    </p>
+    <p class="text-muted/40 text-xs mt-2">© 2025 — Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>
